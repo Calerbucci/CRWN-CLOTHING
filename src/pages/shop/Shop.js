@@ -10,7 +10,6 @@ class Shop extends React.Component {
         }
     }
 
-
     render() {
         const {collections} = this.state;
         return (
