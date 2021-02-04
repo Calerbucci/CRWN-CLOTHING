@@ -5,8 +5,6 @@ import Previewcollection from '../../components/previewCollection/Previewcollect
 class Shop extends React.Component {
     constructor(props){
         super(props);
-
-
         this.state = {
             collections : Shopdata
         }
