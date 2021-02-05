@@ -25,7 +25,6 @@ class Signup extends React.Component {
             alert('passwords dont match')
             return;
         }
-
         try
         {
             const {user} = await auth.createUserWithEmailAndPassword(email, password);
@@ -42,7 +41,6 @@ class Signup extends React.Component {
         }
 
     }
-
 
     handleChange = event => {
         const {name, value} = event.target;
