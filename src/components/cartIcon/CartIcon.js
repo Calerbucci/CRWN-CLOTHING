@@ -17,7 +17,7 @@ function cartIcon({toggleCartHidden}) {
 
 
 const maspDispatchToprops = dispatch => ({
-    toggleCartHidden: ()=> dispatch(toggleCartHidden())
+    toggleCartHidden: () => dispatch(toggleCartHidden())
 });
 
 export default connect(null, maspDispatchToprops)(cartIcon)
