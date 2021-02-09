@@ -24,7 +24,6 @@ class  App extends React.Component{
           const userRef = await createUserProfileDocument(userAuth);
 
           userRef.onSnapshot(snapShot => {
-            console.log(snapShot.data());
             setCurrentUser ({
                   id: snapShot.id,
                   ...snapShot.data()
@@ -45,7 +44,7 @@ class  App extends React.Component{
       <Header/>
         <Switch>
           <Route exact path='/' component={Homepage}/>
-          <Route exact path='/shop' component={Shop}/>
+          <Route path='/shop' component={Shop}/>
           <Route exact path='/checkout' component={Checkout}/>
           <Route exact path='/signin' render={() => this.props.currentUser? (<Redirect to ='/'/> ) : (<SigninandSignup/>)}/>
         </Switch>
@@ -60,7 +59,6 @@ const mapStateToProps = (state) => ({
 
 const maspDispatchToprops = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
-
 })
 
 export default connect(mapStateToProps, maspDispatchToprops)(App);
