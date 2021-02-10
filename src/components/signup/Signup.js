@@ -61,15 +61,15 @@ class Signup extends React.Component {
                     </FormInput>
 
                     <FormInput type='email' name='email' value={email} onChange={this.handleChange}
-                    label = 'email' required>
+                    label = 'email' autoComplete='username' required>
                     </FormInput>
 
                     <FormInput type='password' name='password' value={password} onChange={this.handleChange}
-                    label = 'password' required>
+                    label = 'password' autoComplete='new-password' required>
                     </FormInput>
 
                     <FormInput type='password' name='confirmPassword' value={confirmPassword} onChange={this.handleChange}
-                    label = 'Confirm Password' required>
+                    label = 'Confirm Password' autoComplete='new-password' required>
                     </FormInput>
 
                     <Custombutton type='submit'> SIGN UP </Custombutton>
