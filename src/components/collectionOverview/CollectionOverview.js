@@ -5,7 +5,6 @@ import Previewcollection from '../../components/previewCollection/Previewcollect
 import {selectCollectionForPreview} from '../../redux/shop/shop-selector'
 
 function CollectionOverview({collections}) {
-    console.log(collections)
     return (
         <div className='collection-overview'>
             {
