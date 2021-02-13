@@ -19,9 +19,6 @@ const config = {
         const userRef = firestore.doc(`users/${userAuth.uid}`);
         const snapShot = await userRef.get();
 
-        console.log(snapShot)
-
-
         if(!snapShot.exists){
             const { displayName, email} = userAuth;
             const createdAt = new Date();
@@ -56,8 +53,6 @@ const config = {
               items: items
           };
       });
-
-      console.log(transformedCollection);
 
         return  transformedCollection.reduce((accumulator, collection) => {
           accumulator[collection.title.toLowerCase()]= collection;
