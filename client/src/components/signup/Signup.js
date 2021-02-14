@@ -7,6 +7,7 @@ import {auth, createUserProfileDocument} from '../../firebase/firebase'
 
 
 class Signup extends React.Component {
+    _isMounted = false;
     constructor(props){
         super(props);
         this.state = {
@@ -19,6 +20,7 @@ class Signup extends React.Component {
 
     handleSubmit = async event => {
         event.preventDefault();
+        this._isMounted =true;
 
         const {displayName, email, password, confirmPassword} = this.state;
         if(password !== confirmPassword) {
@@ -29,12 +31,16 @@ class Signup extends React.Component {
         {
             const {user} = await auth.createUserWithEmailAndPassword(email, password);
             await createUserProfileDocument(user, {displayName})
-            this.setState({
+
+            if(this._isMounted)  
+            {
+                this.setState({
                 displayName:'',
                 email:'',
                 password: '',
                 confirmPassword: ''
             })
+          }
         }
         catch(error){
                 console.log('error creating user ', error.message);
@@ -44,8 +50,11 @@ class Signup extends React.Component {
 
     handleChange = event => {
         const {name, value} = event.target;
-
         this.setState({ [name]: value})
+    }
+
+    componentWillUnmount(){
+        this._isMounted =false;
     }
 
     render(){
