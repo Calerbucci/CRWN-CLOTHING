@@ -16,6 +16,7 @@ function Stripebutton({price}) {
             }
         }).then(response => {
             alert('Payment Succesful');
+            console.log(response);
         }).catch(error => {
             console.log('Payment error: ', error);
             alert('There was an issue with your payment, Please sure you use the provided credit card')
