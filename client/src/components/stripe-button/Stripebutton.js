@@ -26,7 +26,7 @@ function Stripebutton({price}) {
     return (
         <StripeCheckout
             label = 'Pay Now'
-            name =' Andella Clothing Ltd.'
+            name ='Litkicks'
             billingAddress
             shippingAddress
             image='https://sendeyo.com/up/d/f3eb2117da'
